@@ -13,8 +13,19 @@ Import-Module Pscx
 $platDir = If($x64) { "\x64" } ElseIf ($arm64) { "\arm64" } Else { "" }
 $distname = If($x64) { "win64" } ElseIf($arm64) { "win-arm64" } Else { "win32" }
 If($vs2008) { $distname = "vs2008.$distname" }
-$vcvarsarch = If($x64) { "amd64" } ElseIf ($arm64) { "arm64" } Else { "x86" }
-$vsver = If($vs2008) { "90" } Else { "140" }
+
+If($vs2008) {
+    $vcvarsarch = If($x64) { "amd64" } ElseIf ($arm64) { "arm64" } Else { "x86" }
+    Import-VisualStudioVars -VisualStudioVersion "90" -Architecture $vcvarsarch
+} Else {
+    $vcvarsarch = If($x64) { "x86_amd64" } ElseIf ($arm64) { "x86_arm64" } Else { "32" }
+    cmd.exe /c "call `"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars$vcvarsarch.bat`" && set > %temp%\vcvars$vcvarsarch.txt"
+    Get-Content "$env:temp\vcvars$vcvarsarch.txt" | Foreach-Object {
+        if ($_ -match "^(.*?)=(.*)$") {
+            Set-Content "env:\$($matches[1])" $matches[2]
+        }
+    }
+}
 
 Set-Location $PSScriptRoot
 
@@ -48,7 +59,10 @@ cscript configure.js lib="$zlibLib;$iconvLib;$xmlLib" include="$zlibInc;$iconvIn
 Start-Process -NoNewWindow -Wait nmake "libxslta libexslta"
 Set-Location ..\..
 
-# Pushed by Import-VisualStudioVars
+if($vs2008) {
+    # Pushed by Import-VisualStudioVars
+    Pop-EnvironmentBlock
+}
 
 # Bundle releases
 Function BundleRelease($name, $lib, $inc)
