@@ -120,7 +120,7 @@
     </PreBuildEvent>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\..\..\source;.\..\..\source\lib;.\..\..\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\libiconv\source;..\..\libiconv\source\lib;..\..\libiconv\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>HAVE_CONFIG_H;ENABLE_RELOCATABLE=1;IN_LIBRARY;LIBDIR="c:\\\\program files\\iconv";INSTALLPREFIX="c:\\\\program files\\iconv";INSTALLDIR="c:\\\\program files\\iconv";NO_XMALLOC;set_relocation_prefix=libiconv_set_relocation_prefix;relocate=libiconv_relocate;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -143,7 +143,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\..\..\source;.\..\..\source\lib;.\..\..\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\libiconv\source;..\..\libiconv\source\lib;..\..\libiconv\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>HAVE_CONFIG_H;ENABLE_RELOCATABLE=1;IN_LIBRARY;LIBDIR="c:\\\\program files\\iconv";INSTALLPREFIX="c:\\\\program files\\iconv";INSTALLDIR="c:\\\\program files\\iconv";NO_XMALLOC;set_relocation_prefix=libiconv_set_relocation_prefix;relocate=libiconv_relocate;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -165,7 +165,7 @@
     <Midl />
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\..\..\source;.\..\..\source\lib;.\..\..\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\libiconv\source;..\..\libiconv\source\lib;..\..\libiconv\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>HAVE_CONFIG_H;ENABLE_RELOCATABLE=1;IN_LIBRARY;LIBDIR="c:\\\\program files\\iconv";INSTALLPREFIX="c:\\\\program files\\iconv";INSTALLDIR="c:\\\\program files\\iconv";NO_XMALLOC;set_relocation_prefix=libiconv_set_relocation_prefix;relocate=libiconv_relocate;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -187,7 +187,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\..\..\source;.\..\..\source\lib;.\..\..\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\libiconv\source;..\..\libiconv\source\lib;..\..\libiconv\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>HAVE_CONFIG_H;ENABLE_RELOCATABLE=1;IN_LIBRARY;LIBDIR="c:\\program files\iconv";INSTALLPREFIX="c:\\program files\iconv";INSTALLDIR="c:\\program files\iconv";NO_XMALLOC;set_relocation_prefix=libiconv_set_relocation_prefix;relocate=libiconv_relocate;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader />
@@ -209,7 +209,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\..\..\source;.\..\..\source\lib;.\..\..\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\libiconv\source;..\..\libiconv\source\lib;..\..\libiconv\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>HAVE_CONFIG_H;ENABLE_RELOCATABLE=1;IN_LIBRARY;LIBDIR="c:\\program files\iconv";INSTALLPREFIX="c:\\program files\iconv";INSTALLDIR="c:\\program files\iconv";NO_XMALLOC;set_relocation_prefix=libiconv_set_relocation_prefix;relocate=libiconv_relocate;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader />
@@ -230,7 +230,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\..\..\source;.\..\..\source\lib;.\..\..\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\libiconv\source;..\..\libiconv\source\lib;..\..\libiconv\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>HAVE_CONFIG_H;ENABLE_RELOCATABLE=1;IN_LIBRARY;LIBDIR="c:\\program files\iconv";INSTALLPREFIX="c:\\program files\iconv";INSTALLDIR="c:\\program files\iconv";NO_XMALLOC;set_relocation_prefix=libiconv_set_relocation_prefix;relocate=libiconv_relocate;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -244,7 +244,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\source\lib\iconv.c">
+    <ClCompile Include="..\..\libiconv\source\lib\iconv.c">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
@@ -258,7 +258,7 @@
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
     </ClCompile>
-    <ClCompile Include="..\..\source\libcharset\lib\localcharset.c">
+    <ClCompile Include="..\..\libiconv\source\libcharset\lib\localcharset.c">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
@@ -272,7 +272,7 @@
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
     </ClCompile>
-    <ClCompile Include="..\..\source\lib\relocatable.c">
+    <ClCompile Include="..\..\libiconv\source\lib\relocatable.c">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
@@ -288,9 +288,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\source\config.h" />
-    <ClInclude Include="..\..\source\include\iconv.h" />
-    <ClInclude Include="..\..\source\lib\localcharset.h" />
+    <ClInclude Include="..\..\libiconv\source\config.h" />
+    <ClInclude Include="..\..\libiconv\source\include\iconv.h" />
+    <ClInclude Include="..\..\libiconv\source\lib\localcharset.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

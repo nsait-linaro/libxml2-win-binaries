@@ -33,13 +33,16 @@ if($vs2008) {
     Set-Location .\libiconv\MSVC9
     $vcarch = If($x64) { "x64" } Else {"Win32"}
     vcbuild libiconv_static\libiconv_static.vcproj "Release|$vcarch"
+    $iconvLib = Join-Path (pwd) libiconv_static$platDir\Release
 } else {
-    Set-Location .\MSVC16
-    msbuild libiconv_static.vcxproj /p:Configuration=Release
+    Set-Location .\libiconv_msvc16\
+    msbuild libiconv.sln /p:Configuration=Release /t:libiconv_static
+    $iconvLib = Join-Path (pwd) libiconv_static$platDir\Release
 }
-$iconvLib = Join-Path (pwd) $platDir\Release\lib
-$iconvInc = Join-Path (pwd) ..\libiconv\source\include
-Set-Location ..\
+
+$iconvInc = Join-Path $PSScriptRoot libiconv\source\include
+
+Set-Location $PSScriptRoot
 
 Set-Location .\zlib
 Start-Process -NoNewWindow -Wait nmake "-f win32/Makefile.msc zlib.lib"
@@ -61,7 +64,7 @@ Set-Location ..\..
 
 if($vs2008) {
     # Pushed by Import-VisualStudioVars
-    Pop-EnvironmentBlock
+    Pop-EnvironmentBlockq
 }
 
 # Bundle releases
