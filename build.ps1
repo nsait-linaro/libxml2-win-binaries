@@ -36,7 +36,7 @@ if($vs2008) {
     $iconvLib = Join-Path (pwd) libiconv_static$platDir\Release
 } else {
     Set-Location .\libiconv_msvc16\
-    msbuild libiconv.sln /p:Configuration=Release /t:libiconv_static
+    msbuild libiconv_static\libiconv_static.vcxproj /p:Configuration=Release
     $iconvLib = Join-Path (pwd) libiconv_static$platDir\Release
 }
 
