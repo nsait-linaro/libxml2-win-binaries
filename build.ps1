@@ -64,7 +64,7 @@ Set-Location ..\..
 
 if($vs2008) {
     # Pushed by Import-VisualStudioVars
-    Pop-EnvironmentBlockq
+    Pop-EnvironmentBlock
 }
 
 # Bundle releases
