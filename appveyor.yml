@@ -19,6 +19,8 @@ environment:
 install:
 - cmd: git submodule update --init --recursive
 - ps: install-module pscx -scope CurrentUser -AllowClobber
+- ps: install-module VSSetup -scope CurrentUser -AllowClobber
+- ps: Get-VSSetupInstance -All
 - ps: >-
     if ($env:PATCH_VS2008 -eq 'True') {
         # http://scikit-ci-addons.readthedocs.io/en/latest/addons.html#patch-vs2008-py
@@ -29,6 +31,7 @@ install:
     }
 build: off
 build_script:
+- ps: Get-VSSetupInstance -All
 - ps: >-
     $x64param = if ($env:Architecture -eq 'x64') { $true } else { $false }
 
