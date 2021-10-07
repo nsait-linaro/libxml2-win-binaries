@@ -15,7 +15,7 @@ $distname = If($x64) { "win64" } ElseIf($arm64) { "win-arm64" } Else { "win32" }
 If($vs2008) { $distname = "vs2008.$distname" }
 
 If($vs2008) {
-    $vcvarsarch = If($x64) { "amd64" } ElseIf ($arm64) { "arm64" } Else { "x86" }
+    $vcvarsarch = If($x64) { "amd64" } Else { "x86" }
     Import-VisualStudioVars -VisualStudioVersion "90" -Architecture $vcvarsarch
 } Else {
     $vcvarsarch = If($x64) { "x86_amd64" } ElseIf ($arm64) { "x86_arm64" } Else { "32" }
