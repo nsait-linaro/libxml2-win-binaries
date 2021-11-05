@@ -656,7 +656,7 @@ index 0000000..7461311
 +    <_ProjectFileVersion>11.0.51106.1</_ProjectFileVersion>
 +  </PropertyGroup>
 +  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-+    <OutDir>..\$(Platform)\</OutDir>
++    <OutDir>..\</OutDir>
 +    <IntDir>obj\$(Configuration)\$(Platform)\</IntDir>
 +  </PropertyGroup>
 +  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
@@ -668,7 +668,7 @@ index 0000000..7461311
 +    <IntDir>obj\$(Configuration)\$(Platform)\</IntDir>
 +  </PropertyGroup>
 +  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-+    <OutDir>..\$(Platform)\</OutDir>
++    <OutDir>..\</OutDir>
 +    <IntDir>obj\$(Configuration)\$(Platform)\</IntDir>
 +  </PropertyGroup>
 +  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
