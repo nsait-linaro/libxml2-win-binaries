@@ -33,12 +33,13 @@ if($vs2008) {
     Set-Location .\libiconv\MSVC9
     $vcarch = If($x64) { "x64" } Else {"Win32"}
     vcbuild libiconv_static\libiconv_static.vcproj "Release|$vcarch"
+    $iconvLib = Join-Path (pwd) libiconv_static$platDir\Release
 } else {
     Set-Location .\libiconv\MSVC16
     msbuild libiconv_static\libiconv_static.vcxproj /p:Configuration=Release
+    $iconvLib = Join-Path (pwd) libiconv_static$platDir\Release\lib
 }
 
-$iconvLib = Join-Path (pwd) libiconv_static$platDir\Release\lib
 $iconvInc = Join-Path $PSScriptRoot libiconv\source\include
 
 Set-Location $PSScriptRoot
