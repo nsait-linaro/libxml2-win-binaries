@@ -1,7 +1,7 @@
-From d090d3b0c5cf7de7bdacad62bc70013d0075c7d7 Mon Sep 17 00:00:00 2001
+From 932b75e8aaec6805a23009e11f6ad11f858c6c1e Mon Sep 17 00:00:00 2001
 From: Niyas Sait <niyas.sait@linaro.org>
-Date: Fri, 5 Nov 2021 14:11:11 +0000
-Subject: [PATCH 1/1] add msvc16 files
+Date: Fri, 5 Nov 2021 14:58:39 +0000
+Subject: [PATCH 1/1] add msvc 16 files
 
 ---
  MSVC16/libiconv-64.rc                         |  40 +++
@@ -9,10 +9,10 @@ Subject: [PATCH 1/1] add msvc16 files
  MSVC16/libiconv.sln                           |  50 +++
  MSVC16/libiconv_dll/libiconv_dll.vcxproj      | 322 ++++++++++++++++++
  .../libiconv_dll/libiconv_dll.vcxproj.filters |  47 +++
- .../libiconv_static/libiconv_static.vcxproj   | 295 ++++++++++++++++
+ .../libiconv_static/libiconv_static.vcxproj   | 297 ++++++++++++++++
  .../libiconv_static.vcxproj.filters           |  39 +++
  MSVC16/vs16.bat                               |   6 +
- 8 files changed, 842 insertions(+)
+ 8 files changed, 844 insertions(+)
  create mode 100644 MSVC16/libiconv-64.rc
  create mode 100644 MSVC16/libiconv.rc
  create mode 100644 MSVC16/libiconv.sln
@@ -175,7 +175,7 @@ index 0000000..c29fb11
 +EndGlobal
 diff --git a/MSVC16/libiconv_dll/libiconv_dll.vcxproj b/MSVC16/libiconv_dll/libiconv_dll.vcxproj
 new file mode 100644
-index 0000000..6b3b0dd
+index 0000000..525c9ac
 --- /dev/null
 +++ b/MSVC16/libiconv_dll/libiconv_dll.vcxproj
 @@ -0,0 +1,322 @@
@@ -504,7 +504,7 @@ index 0000000..6b3b0dd
 \ No newline at end of file
 diff --git a/MSVC16/libiconv_dll/libiconv_dll.vcxproj.filters b/MSVC16/libiconv_dll/libiconv_dll.vcxproj.filters
 new file mode 100644
-index 0000000..846fecd
+index 0000000..2e34cd7
 --- /dev/null
 +++ b/MSVC16/libiconv_dll/libiconv_dll.vcxproj.filters
 @@ -0,0 +1,47 @@
@@ -558,10 +558,10 @@ index 0000000..846fecd
 \ No newline at end of file
 diff --git a/MSVC16/libiconv_static/libiconv_static.vcxproj b/MSVC16/libiconv_static/libiconv_static.vcxproj
 new file mode 100644
-index 0000000..56cdf2e
+index 0000000..7461311
 --- /dev/null
 +++ b/MSVC16/libiconv_static/libiconv_static.vcxproj
-@@ -0,0 +1,295 @@
+@@ -0,0 +1,297 @@
 +﻿<?xml version="1.0" encoding="utf-8"?>
 +<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 +  <ItemGroup Label="ProjectConfigurations">
@@ -660,6 +660,7 @@ index 0000000..56cdf2e
 +    <IntDir>obj\$(Configuration)\$(Platform)\</IntDir>
 +  </PropertyGroup>
 +  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
++    <OutDir>..\$(Platform)\</OutDir>
 +    <IntDir>obj\$(Configuration)\$(Platform)\</IntDir>
 +  </PropertyGroup>
 +  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -671,6 +672,7 @@ index 0000000..56cdf2e
 +    <IntDir>obj\$(Configuration)\$(Platform)\</IntDir>
 +  </PropertyGroup>
 +  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
++    <OutDir>..\$(Platform)\</OutDir>
 +    <IntDir>obj\$(Configuration)\$(Platform)\</IntDir>
 +  </PropertyGroup>
 +  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -857,10 +859,9 @@ index 0000000..56cdf2e
 +  <ImportGroup Label="ExtensionTargets">
 +  </ImportGroup>
 +</Project>
-\ No newline at end of file
 diff --git a/MSVC16/libiconv_static/libiconv_static.vcxproj.filters b/MSVC16/libiconv_static/libiconv_static.vcxproj.filters
 new file mode 100644
-index 0000000..a4a0f2b
+index 0000000..f405099
 --- /dev/null
 +++ b/MSVC16/libiconv_static/libiconv_static.vcxproj.filters
 @@ -0,0 +1,39 @@
